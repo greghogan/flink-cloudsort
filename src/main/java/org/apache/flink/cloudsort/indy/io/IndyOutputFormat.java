@@ -23,8 +23,12 @@ import org.apache.flink.api.java.tuple.Tuple1;
 import org.apache.flink.cloudsort.indy.IndyRecord;
 import org.apache.flink.cloudsort.io.PipedOutput;
 import org.apache.flink.configuration.Configuration;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
@@ -35,6 +39,8 @@ import java.util.concurrent.Semaphore;
  * Writes to a PipedOutput.
  */
 public class IndyOutputFormat extends RichOutputFormat<Tuple1<IndyRecord>> {
+
+	private static final Logger LOG = LoggerFactory.getLogger(IndyOutputFormat.class);
 
 	private final PipedOutput output;
 
@@ -54,7 +60,6 @@ public class IndyOutputFormat extends RichOutputFormat<Tuple1<IndyRecord>> {
 	private int currentTaskNumber;
 	private int currentChunk;
 	private long bytesWritten;
-	private Process currentProcess;
 
 	public IndyOutputFormat(PipedOutput output, int concurrentFiles, int bufferSize, long chunkSize) {
 		this.output = output;
@@ -80,10 +85,9 @@ public class IndyOutputFormat extends RichOutputFormat<Tuple1<IndyRecord>> {
 
 	private void openInternal() throws IOException {
 		lock.acquireUninterruptibly();
-		String taskId = String.format("%d/%d", currentTaskNumber, currentChunk);
 
-		currentProcess = output.open(taskId);
-		stream = new BufferedOutputStream(currentProcess.getOutputStream(), bufferSize);
+		String filename = "/dev/shm/" + String.format("%d.%d", currentTaskNumber, currentChunk);
+		stream = new BufferedOutputStream(new FileOutputStream(filename), bufferSize);
 
 		bytesWritten = 0;
 	}
@@ -120,12 +124,20 @@ public class IndyOutputFormat extends RichOutputFormat<Tuple1<IndyRecord>> {
 
 	private void closeInternal() {
 		// close stream and upload
-		Thread thread = new Thread(new FileCloser(stream, currentProcess));
+		try {
+			stream.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		stream = null;
+
+		String filename = "/dev/shm/" + String.format("%d.%d", currentTaskNumber, currentChunk);
+		String taskId = String.format("%d/%d", currentTaskNumber, currentChunk);
+
+		Thread thread = new Thread(new FileCloser(output, filename, taskId));
 		thread.start();
 		activeUploaders.add(thread);
-
-		currentProcess = null;
-		stream = null;
 
 		currentChunk++;
 
@@ -148,26 +160,33 @@ public class IndyOutputFormat extends RichOutputFormat<Tuple1<IndyRecord>> {
 	}
 
 	private static final class FileCloser implements Runnable {
-		private OutputStream stream;
-		private Process outputProcess;
+		private PipedOutput output;
+		private String filename;
+		private String taskId;
 
-		public FileCloser(OutputStream stream, Process outputProcess) {
-			this.stream = stream;
-			this.outputProcess = outputProcess;
+		public FileCloser(PipedOutput output, String filename, String taskId) {
+			this.output = output;
+			this.filename = filename;
+			this.taskId = taskId;
 		}
 
 		@Override
 		public void run() {
-			try {
-				stream.close();
-			} catch (IOException e) {
-				e.printStackTrace();
+			boolean success = false;
+
+			while (! success) {
+				try {
+					Process upload = output.open(filename, taskId);
+					if (upload.waitFor() == 0) {
+						success = true;
+					}
+				} catch (IOException | InterruptedException e) {
+					e.printStackTrace();
+				}
 			}
 
-			try {
-				outputProcess.waitFor();
-			} catch (InterruptedException e) {
-				e.printStackTrace();
+			if (! new File(filename).delete()) {
+				LOG.error("Could not delete file " + filename);
 			}
 
 			lock.release();

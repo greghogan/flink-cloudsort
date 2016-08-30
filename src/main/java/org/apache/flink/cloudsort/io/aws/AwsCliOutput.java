@@ -30,15 +30,16 @@ import java.lang.ProcessBuilder.Redirect;
 public class AwsCliOutput extends PipedOutputBase {
 
 	@Override
-	public Process open(String taskId) throws IOException {
+	public Process open(String filename, String taskId) throws IOException {
 		Preconditions.checkNotNull(bucket);
 		Preconditions.checkNotNull(prefix);
 		Preconditions.checkNotNull(storageClass);
+		Preconditions.checkNotNull(filename);
 		Preconditions.checkNotNull(taskId);
 
 		String objectName = prefix + taskId;
 
-		return new ProcessBuilder("aws", "s3", "cp", "--storage-class", storageClass, "-", "s3://" + bucket + "/" + objectName)
+		return new ProcessBuilder("aws", "s3", "cp", "--storage-class", storageClass, filename, "s3://" + bucket + "/" + objectName)
 			.redirectError(Redirect.INHERIT)
 			.redirectOutput(Redirect.INHERIT)
 			.start();

@@ -52,9 +52,9 @@ public interface PipedOutput {
 	/**
 	 * Open the process pipe.
 	 *
+	 * @param filename the name of the file to be uploaded
 	 * @param taskId name of the current task, typically "taskNumber-partNumber"
-	 * @return the new output process
 	 * @throws IOException
 	 */
-	Process open(String taskId) throws IOException;
+	Process open(String filename, String taskId) throws IOException;
 }

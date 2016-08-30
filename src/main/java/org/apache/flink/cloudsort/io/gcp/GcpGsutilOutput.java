@@ -30,14 +30,15 @@ import java.lang.ProcessBuilder.Redirect;
 public class GcpGsutilOutput extends PipedOutputBase {
 
 	@Override
-	public Process open(String taskId) throws IOException {
+	public Process open(String filename, String taskId) throws IOException {
 		Preconditions.checkNotNull(bucket);
 		Preconditions.checkNotNull(prefix);
+		Preconditions.checkNotNull(filename);
 		Preconditions.checkNotNull(taskId);
 
 		String objectName = prefix + taskId;
 
-		return new ProcessBuilder("gsutil", "cp", "-", "gs://" + bucket + "/" + objectName)
+		return new ProcessBuilder("gsutil", "cp", filename, "gs://" + bucket + "/" + objectName)
 			.redirectError(Redirect.INHERIT)
 			.redirectOutput(Redirect.INHERIT)
 			.start();

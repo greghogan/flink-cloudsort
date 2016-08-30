@@ -37,9 +37,10 @@ public class AwsCurlOutput extends PipedOutputBase {
 	private static final String CONTENT_TYPE = "application/octet-stream";
 
 	@Override
-	public Process open(String taskId) throws IOException {
+	public Process open(String filename, String taskId) throws IOException {
 		Preconditions.checkNotNull(bucket);
 		Preconditions.checkNotNull(prefix);
+		Preconditions.checkNotNull(filename);
 		Preconditions.checkNotNull(taskId);
 
 		String objectName = prefix + taskId;
@@ -58,7 +59,7 @@ public class AwsCurlOutput extends PipedOutputBase {
 
 		String url = s3Client.generatePresignedUrl(generatePresignedUrlRequest).toExternalForm();
 
-		return new ProcessBuilder("curl", "-s", "--max-time", "60", "--retry", "1024", "-X", "PUT", "-H", "Content-Type: " + CONTENT_TYPE, "--data-binary", "@-", url)
+		return new ProcessBuilder("curl", "-s", "--max-time", "60", "--retry", "1024", "-X", "PUT", "-H", "Content-Type: " + CONTENT_TYPE, "--data-binary", "@" + filename, url)
 			.redirectError(Redirect.INHERIT)
 			.redirectOutput(Redirect.INHERIT)
 			.start();
