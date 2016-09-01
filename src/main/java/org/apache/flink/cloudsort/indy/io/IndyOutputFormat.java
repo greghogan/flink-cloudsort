@@ -34,6 +34,7 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Semaphore;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Writes to a PipedOutput.
@@ -44,11 +45,13 @@ public class IndyOutputFormat extends RichOutputFormat<Tuple1<IndyRecord>> {
 
 	private final PipedOutput output;
 
-	private int concurrentFiles;
-
 	private final int bufferSize;
 
 	private final long chunkSize;
+
+	private final int concurrentFiles;
+
+	private final int uploadTimeout;
 
 	/** The stream to which the data is written */
 	private transient OutputStream stream;
@@ -61,11 +64,12 @@ public class IndyOutputFormat extends RichOutputFormat<Tuple1<IndyRecord>> {
 	private int currentChunk;
 	private long bytesWritten;
 
-	public IndyOutputFormat(PipedOutput output, int concurrentFiles, int bufferSize, long chunkSize) {
+	public IndyOutputFormat(PipedOutput output, int bufferSize, long chunkSize, int concurrentFiles, int uploadTimeout) {
 		this.output = output;
-		this.concurrentFiles = concurrentFiles;
 		this.bufferSize = bufferSize;
 		this.chunkSize = chunkSize;
+		this.concurrentFiles = concurrentFiles;
+		this.uploadTimeout = uploadTimeout;
 	}
 
 	@Override
@@ -135,7 +139,7 @@ public class IndyOutputFormat extends RichOutputFormat<Tuple1<IndyRecord>> {
 		String filename = "/dev/shm/" + String.format("%d.%d", currentTaskNumber, currentChunk);
 		String taskId = String.format("%d/%d", currentTaskNumber, currentChunk);
 
-		Thread thread = new Thread(new FileCloser(output, filename, taskId));
+		Thread thread = new Thread(new FileCloser(output, filename, taskId, uploadTimeout));
 		thread.start();
 		activeUploaders.add(thread);
 
@@ -163,11 +167,13 @@ public class IndyOutputFormat extends RichOutputFormat<Tuple1<IndyRecord>> {
 		private PipedOutput output;
 		private String filename;
 		private String taskId;
+		private int uploadTimeout;
 
-		public FileCloser(PipedOutput output, String filename, String taskId) {
+		public FileCloser(PipedOutput output, String filename, String taskId, int uploadTimeout) {
 			this.output = output;
 			this.filename = filename;
 			this.taskId = taskId;
+			this.uploadTimeout = uploadTimeout;
 		}
 
 		@Override
@@ -177,8 +183,13 @@ public class IndyOutputFormat extends RichOutputFormat<Tuple1<IndyRecord>> {
 			while (! success) {
 				try {
 					Process upload = output.open(filename, taskId);
-					if (upload.waitFor() == 0) {
-						success = true;
+					success = upload.waitFor(uploadTimeout, TimeUnit.SECONDS);
+
+					if (success) {
+						success = upload.exitValue() == 0;
+					} else {
+						LOG.info("Terminating upload for " + taskId);
+						upload.destroyForcibly();
 					}
 				} catch (IOException | InterruptedException e) {
 					e.printStackTrace();

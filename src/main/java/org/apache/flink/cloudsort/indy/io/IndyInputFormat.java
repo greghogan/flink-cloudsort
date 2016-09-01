@@ -50,6 +50,10 @@ public class IndyInputFormat extends RichInputFormat<Tuple1<IndyRecord>, InputSp
 
 	private final int bufferSize;
 
+	private final int downloadTimeout;
+
+	private long terminateDownloadAt;
+
 	private transient boolean end;
 
 	// name of object in case the input stream closes and must be reopened
@@ -61,9 +65,10 @@ public class IndyInputFormat extends RichInputFormat<Tuple1<IndyRecord>, InputSp
 	// track bytes read to compare with length of storage object
 	private transient int bytesRead;
 
-	public IndyInputFormat(PipedInput input, int bufferSize) {
+	public IndyInputFormat(PipedInput input, int bufferSize, int downloadTimeout) {
 		this.input = input;
 		this.bufferSize = bufferSize;
+		this.downloadTimeout = downloadTimeout;
 	}
 
 	@Override
@@ -102,6 +107,8 @@ public class IndyInputFormat extends RichInputFormat<Tuple1<IndyRecord>, InputSp
 
 			end = false;
 			bytesRead = 0;
+
+			terminateDownloadAt = System.currentTimeMillis() + 1000 * downloadTimeout;
 		}
 	}
 
@@ -111,34 +118,49 @@ public class IndyInputFormat extends RichInputFormat<Tuple1<IndyRecord>, InputSp
 			return null;
 		}
 
-		try {
-			bytesRead += reuse.f0.read(stream);
+		while (System.currentTimeMillis() < terminateDownloadAt) {
+			try {
+				if (stream.available() >= IndyRecord.LENGTH) {
+					bytesRead += reuse.f0.read(stream);
 
-			if (bytesRead >= objectSize) {
-				// have reached the end of our input split so validate
-				// that the correct number of bytes have been read
-				assert bytesRead == objectSize;
-				end = true;
+					if (bytesRead >= objectSize) {
+						// have reached the end of our input split so validate
+						// that the correct number of bytes have been read
+						assert bytesRead == objectSize;
+						end = true;
+					}
+
+					return reuse;
+				} else {
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException ignored) {
+					}
+				}
+			} catch (EOFException ex) {
+				LOG.debug("End-of-file reached prematurely while downloading " + objectName, ex);
 			}
-		} catch (EOFException ex) {
-			close();
-
-			// reopen the stream and skip to current location
-			input.open(objectName);
-			stream = input.getInputStream();
-
-			byte[] buf = new byte[8192];
-			long bytesToSkip = bytesRead;
-
-			while (bytesToSkip > 0) {
-				int bytesToRead = (int)Long.min(buf.length, bytesToSkip);
-				bytesToSkip -= stream.read(buf, 0, bytesToRead);
-			}
-
-			return nextRecord(reuse);
 		}
 
-		return reuse;
+		LOG.info("Terminating download of " + objectName);
+
+		close();
+
+		// reopen the stream and skip to current location
+		input.open(objectName);
+		stream = input.getInputStream();
+
+		byte[] buf = new byte[8192];
+		long bytesToSkip = bytesRead;
+
+		while (bytesToSkip > 0) {
+			int bytesToRead = (int)Long.min(buf.length, bytesToSkip);
+			bytesToSkip -= stream.read(buf, 0, bytesToRead);
+		}
+
+		terminateDownloadAt = System.currentTimeMillis() + 1000 * Math.max(30, downloadTimeout * (objectSize - bytesRead) / objectSize);
+
+		return nextRecord(reuse);
 	}
 
 	@Override

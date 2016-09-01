@@ -62,6 +62,8 @@ public class IndySort {
 		System.out.println("  --buffer_size BUFFER_SIZE");
 		System.out.println("  --chunk_size CHUNK_SIZE");
 		System.out.println("  --concurrent_files CONCURRENT_FILES");
+		System.out.println("  --download_timeout DOWNLOAD_TIMEOUT");
+		System.out.println("  --upload_timeout UPLOAD_TIMEOUT");
 		System.out.println();
 		System.out.println("input:");
 		System.out.println("  --input fs --input_path PATH");
@@ -89,6 +91,7 @@ public class IndySort {
 		DataSet<Tuple1<IndyRecord>> input;
 
 		int bufferSize = parameters.getInt("buffer_size");
+		int downloadTimeout = parameters.getInt("download_timeout");
 
 		switch (parameters.get("input", "")) {
 			case "awscli": {
@@ -96,7 +99,7 @@ public class IndySort {
 					.setBucket(parameters.get("input_bucket"))
 					.setPrefix(parameters.get("input_prefix"));
 				input = env
-					.createInput(new org.apache.flink.cloudsort.indy.io.IndyInputFormat(pipedInput, bufferSize))
+					.createInput(new org.apache.flink.cloudsort.indy.io.IndyInputFormat(pipedInput, bufferSize, downloadTimeout))
 					.name("Amazon Web Services [CLI]");
 				} break;
 
@@ -105,7 +108,7 @@ public class IndySort {
 					.setBucket(parameters.get("input_bucket"))
 					.setPrefix(parameters.get("input_prefix"));
 				input = env
-					.createInput(new org.apache.flink.cloudsort.indy.io.IndyInputFormat(pipedInput, bufferSize))
+					.createInput(new org.apache.flink.cloudsort.indy.io.IndyInputFormat(pipedInput, bufferSize, downloadTimeout))
 					.name("Amazon Web Services [curl]");
 			} break;
 
@@ -121,7 +124,7 @@ public class IndySort {
 					.setBucket(parameters.get("input_bucket"))
 					.setPrefix(parameters.get("input_prefix"));
 				input = env
-					.createInput(new org.apache.flink.cloudsort.indy.io.IndyInputFormat(pipedInput, bufferSize))
+					.createInput(new org.apache.flink.cloudsort.indy.io.IndyInputFormat(pipedInput, bufferSize, downloadTimeout))
 						.name("Google Cloud Storage");
 			} break;
 
@@ -150,7 +153,8 @@ public class IndySort {
 			.map(new IndyValidate(validateID))
 				.name("Validate");
 
-		int concurrent_files = parameters.getInt("concurrent_files");
+		int concurrentFiles = parameters.getInt("concurrent_files");
+		int uploadTimeout = parameters.getInt("upload_timeout");
 
 		// align chunk_size on record boundaries
 		long chunkSize = parameters.getLong("chunk_size", Long.MAX_VALUE);
@@ -163,7 +167,7 @@ public class IndySort {
 					.setPrefix(parameters.get("output_prefix"))
 					.setStorageClass(parameters.get("storage_class"));
 				sorted
-					.output(new org.apache.flink.cloudsort.indy.io.IndyOutputFormat(pipedOutput, concurrent_files, bufferSize, chunkSize))
+					.output(new org.apache.flink.cloudsort.indy.io.IndyOutputFormat(pipedOutput, bufferSize, chunkSize, concurrentFiles, uploadTimeout))
 					.name("Amazon Web Services [CLI]");
 				} break;
 
@@ -172,7 +176,7 @@ public class IndySort {
 					.setBucket(parameters.get("output_bucket"))
 					.setPrefix(parameters.get("output_prefix"));
 				sorted
-					.output(new org.apache.flink.cloudsort.indy.io.IndyOutputFormat(pipedOutput, concurrent_files, bufferSize, chunkSize))
+					.output(new org.apache.flink.cloudsort.indy.io.IndyOutputFormat(pipedOutput, bufferSize, chunkSize, concurrentFiles, uploadTimeout))
 					.name("Amazon Web Services [curl]");
 			} break;
 
@@ -188,7 +192,7 @@ public class IndySort {
 					.setBucket(parameters.get("output_bucket"))
 					.setPrefix(parameters.get("output_prefix"));
 				sorted
-					.output(new org.apache.flink.cloudsort.indy.io.IndyOutputFormat(pipedOutput, concurrent_files, bufferSize, chunkSize))
+					.output(new org.apache.flink.cloudsort.indy.io.IndyOutputFormat(pipedOutput, bufferSize, chunkSize, concurrentFiles, uploadTimeout))
 						.name("Google Cloud Storage");
 				} break;
 
