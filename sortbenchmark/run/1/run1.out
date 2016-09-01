@@ -1,0 +1,273 @@
+1472649441.047855112
+Starting cluster.
+Starting jobmanager daemon on host ip-10-0-8-193.
+10.0.4.111: Starting taskmanager daemon on host ip-10-0-4-111.
+10.0.15.72: Starting taskmanager daemon on host ip-10-0-15-72.
+10.0.9.97: Starting taskmanager daemon on host ip-10-0-9-97.
+10.0.5.81: Starting taskmanager daemon on host ip-10-0-5-81.
+10.0.6.255: Starting taskmanager daemon on host ip-10-0-6-255.
+10.0.10.119: Starting taskmanager daemon on host ip-10-0-10-119.
+10.0.4.76: Starting taskmanager daemon on host ip-10-0-4-76.
+10.0.0.34: Starting taskmanager daemon on host ip-10-0-0-34.
+10.0.4.64: Starting taskmanager daemon on host ip-10-0-4-64.
+10.0.10.83: Starting taskmanager daemon on host ip-10-0-10-83.
+10.0.3.65: Starting taskmanager daemon on host ip-10-0-3-65.
+10.0.14.233: Starting taskmanager daemon on host ip-10-0-14-233.
+10.0.13.148: Starting taskmanager daemon on host ip-10-0-13-148.
+10.0.3.90: Starting taskmanager daemon on host ip-10-0-3-90.
+10.0.5.63: Starting taskmanager daemon on host ip-10-0-5-63.
+10.0.7.178: Starting taskmanager daemon on host ip-10-0-7-178.
+10.0.5.109: Starting taskmanager daemon on host ip-10-0-5-109.
+10.0.4.239: Starting taskmanager daemon on host ip-10-0-4-239.
+10.0.3.171: Starting taskmanager daemon on host ip-10-0-3-171.
+10.0.10.130: Starting taskmanager daemon on host ip-10-0-10-130.
+10.0.13.34: Starting taskmanager daemon on host ip-10-0-13-34.
+10.0.15.89: Starting taskmanager daemon on host ip-10-0-15-89.
+10.0.3.173: Starting taskmanager daemon on host ip-10-0-3-173.
+10.0.9.94: Starting taskmanager daemon on host ip-10-0-9-94.
+10.0.14.198: Starting taskmanager daemon on host ip-10-0-14-198.
+10.0.13.204: Starting taskmanager daemon on host ip-10-0-13-204.
+10.0.11.60: Starting taskmanager daemon on host ip-10-0-11-60.
+10.0.5.56: Starting taskmanager daemon on host ip-10-0-5-56.
+10.0.3.163: Starting taskmanager daemon on host ip-10-0-3-163.
+10.0.1.13: Starting taskmanager daemon on host ip-10-0-1-13.
+10.0.6.209: Starting taskmanager daemon on host ip-10-0-6-209.
+10.0.3.208: Starting taskmanager daemon on host ip-10-0-3-208.
+10.0.15.145: Starting taskmanager daemon on host ip-10-0-15-145.
+10.0.0.90: Starting taskmanager daemon on host ip-10-0-0-90.
+10.0.7.222: Starting taskmanager daemon on host ip-10-0-7-222.
+10.0.7.23: Starting taskmanager daemon on host ip-10-0-7-23.
+10.0.1.40: Starting taskmanager daemon on host ip-10-0-1-40.
+10.0.2.147: Starting taskmanager daemon on host ip-10-0-2-147.
+10.0.0.232: Starting taskmanager daemon on host ip-10-0-0-232.
+10.0.11.203: Starting taskmanager daemon on host ip-10-0-11-203.
+10.0.15.51: Starting taskmanager daemon on host ip-10-0-15-51.
+10.0.12.16: Starting taskmanager daemon on host ip-10-0-12-16.
+10.0.8.191: Starting taskmanager daemon on host ip-10-0-8-191.
+10.0.1.55: Starting taskmanager daemon on host ip-10-0-1-55.
+10.0.2.204: Starting taskmanager daemon on host ip-10-0-2-204.
+10.0.1.215: Starting taskmanager daemon on host ip-10-0-1-215.
+10.0.0.68: Starting taskmanager daemon on host ip-10-0-0-68.
+10.0.3.121: Starting taskmanager daemon on host ip-10-0-3-121.
+10.0.10.14: Starting taskmanager daemon on host ip-10-0-10-14.
+10.0.1.210: Starting taskmanager daemon on host ip-10-0-1-210.
+10.0.7.75: Starting taskmanager daemon on host ip-10-0-7-75.
+10.0.1.235: Starting taskmanager daemon on host ip-10-0-1-235.
+10.0.15.232: Starting taskmanager daemon on host ip-10-0-15-232.
+10.0.9.215: Starting taskmanager daemon on host ip-10-0-9-215.
+10.0.9.241: Starting taskmanager daemon on host ip-10-0-9-241.
+10.0.4.247: Starting taskmanager daemon on host ip-10-0-4-247.
+10.0.7.172: Starting taskmanager daemon on host ip-10-0-7-172.
+10.0.12.159: Starting taskmanager daemon on host ip-10-0-12-159.
+10.0.13.173: Starting taskmanager daemon on host ip-10-0-13-173.
+10.0.0.114: Starting taskmanager daemon on host ip-10-0-0-114.
+10.0.7.70: Starting taskmanager daemon on host ip-10-0-7-70.
+10.0.4.67: Starting taskmanager daemon on host ip-10-0-4-67.
+10.0.1.212: Starting taskmanager daemon on host ip-10-0-1-212.
+10.0.2.32: Starting taskmanager daemon on host ip-10-0-2-32.
+10.0.4.203: Starting taskmanager daemon on host ip-10-0-4-203.
+10.0.5.200: Starting taskmanager daemon on host ip-10-0-5-200.
+10.0.7.203: Starting taskmanager daemon on host ip-10-0-7-203.
+10.0.5.118: Starting taskmanager daemon on host ip-10-0-5-118.
+10.0.7.98: Starting taskmanager daemon on host ip-10-0-7-98.
+10.0.11.18: Starting taskmanager daemon on host ip-10-0-11-18.
+10.0.3.190: Starting taskmanager daemon on host ip-10-0-3-190.
+10.0.8.139: Starting taskmanager daemon on host ip-10-0-8-139.
+10.0.4.27: Starting taskmanager daemon on host ip-10-0-4-27.
+10.0.15.18: Starting taskmanager daemon on host ip-10-0-15-18.
+10.0.15.214: Starting taskmanager daemon on host ip-10-0-15-214.
+10.0.4.82: Starting taskmanager daemon on host ip-10-0-4-82.
+10.0.12.204: Starting taskmanager daemon on host ip-10-0-12-204.
+10.0.10.136: Starting taskmanager daemon on host ip-10-0-10-136.
+10.0.15.67: Starting taskmanager daemon on host ip-10-0-15-67.
+10.0.11.153: Starting taskmanager daemon on host ip-10-0-11-153.
+10.0.8.4: Starting taskmanager daemon on host ip-10-0-8-4.
+10.0.1.200: Starting taskmanager daemon on host ip-10-0-1-200.
+10.0.6.20: Starting taskmanager daemon on host ip-10-0-6-20.
+10.0.9.199: Starting taskmanager daemon on host ip-10-0-9-199.
+10.0.2.105: Starting taskmanager daemon on host ip-10-0-2-105.
+10.0.10.191: Starting taskmanager daemon on host ip-10-0-10-191.
+10.0.3.183: Starting taskmanager daemon on host ip-10-0-3-183.
+10.0.3.45: Starting taskmanager daemon on host ip-10-0-3-45.
+10.0.10.50: Starting taskmanager daemon on host ip-10-0-10-50.
+10.0.5.86: Starting taskmanager daemon on host ip-10-0-5-86.
+10.0.0.134: Starting taskmanager daemon on host ip-10-0-0-134.
+10.0.12.112: Starting taskmanager daemon on host ip-10-0-12-112.
+10.0.9.182: Starting taskmanager daemon on host ip-10-0-9-182.
+10.0.9.146: Starting taskmanager daemon on host ip-10-0-9-146.
+10.0.10.192: Starting taskmanager daemon on host ip-10-0-10-192.
+10.0.7.162: Starting taskmanager daemon on host ip-10-0-7-162.
+10.0.5.125: Starting taskmanager daemon on host ip-10-0-5-125.
+10.0.3.246: Starting taskmanager daemon on host ip-10-0-3-246.
+10.0.13.89: Starting taskmanager daemon on host ip-10-0-13-89.
+10.0.2.238: Starting taskmanager daemon on host ip-10-0-2-238.
+10.0.8.69: Starting taskmanager daemon on host ip-10-0-8-69.
+10.0.0.213: Starting taskmanager daemon on host ip-10-0-0-213.
+10.0.10.165: Starting taskmanager daemon on host ip-10-0-10-165.
+10.0.10.103: Starting taskmanager daemon on host ip-10-0-10-103.
+10.0.11.106: Starting taskmanager daemon on host ip-10-0-11-106.
+10.0.15.225: Starting taskmanager daemon on host ip-10-0-15-225.
+10.0.0.216: Starting taskmanager daemon on host ip-10-0-0-216.
+10.0.7.57: Starting taskmanager daemon on host ip-10-0-7-57.
+10.0.14.69: Starting taskmanager daemon on host ip-10-0-14-69.
+10.0.9.152: Starting taskmanager daemon on host ip-10-0-9-152.
+10.0.14.94: Starting taskmanager daemon on host ip-10-0-14-94.
+10.0.13.86: Starting taskmanager daemon on host ip-10-0-13-86.
+10.0.2.203: Starting taskmanager daemon on host ip-10-0-2-203.
+10.0.7.219: Starting taskmanager daemon on host ip-10-0-7-219.
+10.0.9.16: Starting taskmanager daemon on host ip-10-0-9-16.
+10.0.9.38: Starting taskmanager daemon on host ip-10-0-9-38.
+10.0.4.55: Starting taskmanager daemon on host ip-10-0-4-55.
+10.0.3.170: Starting taskmanager daemon on host ip-10-0-3-170.
+10.0.1.246: Starting taskmanager daemon on host ip-10-0-1-246.
+10.0.13.38: Starting taskmanager daemon on host ip-10-0-13-38.
+10.0.13.21: Starting taskmanager daemon on host ip-10-0-13-21.
+10.0.1.203: Starting taskmanager daemon on host ip-10-0-1-203.
+10.0.13.198: Starting taskmanager daemon on host ip-10-0-13-198.
+10.0.6.15: Starting taskmanager daemon on host ip-10-0-6-15.
+10.0.10.171: Starting taskmanager daemon on host ip-10-0-10-171.
+10.0.1.74: Starting taskmanager daemon on host ip-10-0-1-74.
+10.0.15.169: Starting taskmanager daemon on host ip-10-0-15-169.
+10.0.7.82: Starting taskmanager daemon on host ip-10-0-7-82.
+Cluster configuration: Standalone cluster with JobManager at /10.0.8.193:6123
+Using address 10.0.8.193:6123 to connect to JobManager.
+JobManager web interface address http://10.0.8.193:8081
+Starting execution of program
+Optional[first key: 0000000002ae4c0807c2, last key: ffc0000002098eab204e, checksum: 746a51007040ea07ed, record count: 1000000000000, duplicate count: 0, unordered count: 0]
+Program execution finished
+Job with JobID b27d86923e0decdc025c557afc70e9c0 has finished.
+Job Runtime: 7032784 ms
+Accumulator Results: 
+- f21c29eb2b5d2d466fc194ae682c02d5 (java.util.ArrayList) [1024 elements]
+
+1472656573.943337418
+10.0.15.72: Stopping taskmanager daemon (pid: 9347) on host ip-10-0-15-72.
+10.0.3.173: Stopping taskmanager daemon (pid: 9317) on host ip-10-0-3-173.
+10.0.4.111: Stopping taskmanager daemon (pid: 9323) on host ip-10-0-4-111.
+10.0.5.63: Stopping taskmanager daemon (pid: 9366) on host ip-10-0-5-63.
+10.0.9.97: Stopping taskmanager daemon (pid: 9314) on host ip-10-0-9-97.
+10.0.13.34: Stopping taskmanager daemon (pid: 9311) on host ip-10-0-13-34.
+10.0.4.239: Stopping taskmanager daemon (pid: 33769) on host ip-10-0-4-239.
+10.0.3.208: Stopping taskmanager daemon (pid: 33790) on host ip-10-0-3-208.
+10.0.6.255: Stopping taskmanager daemon (pid: 33839) on host ip-10-0-6-255.
+10.0.3.163: Stopping taskmanager daemon (pid: 9315) on host ip-10-0-3-163.
+10.0.3.65: Stopping taskmanager daemon (pid: 9316) on host ip-10-0-3-65.
+10.0.14.233: Stopping taskmanager daemon (pid: 9315) on host ip-10-0-14-233.
+10.0.15.89: Stopping taskmanager daemon (pid: 33785) on host ip-10-0-15-89.
+10.0.14.198: Stopping taskmanager daemon (pid: 9289) on host ip-10-0-14-198.
+10.0.10.130: Stopping taskmanager daemon (pid: 9322) on host ip-10-0-10-130.
+10.0.0.34: Stopping taskmanager daemon (pid: 9278) on host ip-10-0-0-34.
+10.0.4.76: Stopping taskmanager daemon (pid: 9329) on host ip-10-0-4-76.
+10.0.10.83: Stopping taskmanager daemon (pid: 9316) on host ip-10-0-10-83.
+10.0.3.90: Stopping taskmanager daemon (pid: 9316) on host ip-10-0-3-90.
+10.0.5.81: Stopping taskmanager daemon (pid: 33776) on host ip-10-0-5-81.
+10.0.3.171: Stopping taskmanager daemon (pid: 33744) on host ip-10-0-3-171.
+10.0.13.148: Stopping taskmanager daemon (pid: 33793) on host ip-10-0-13-148.
+10.0.5.109: Stopping taskmanager daemon (pid: 33775) on host ip-10-0-5-109.
+10.0.7.178: Stopping taskmanager daemon (pid: 33773) on host ip-10-0-7-178.
+10.0.6.209: Stopping taskmanager daemon (pid: 33813) on host ip-10-0-6-209.
+10.0.11.60: Stopping taskmanager daemon (pid: 9325) on host ip-10-0-11-60.
+10.0.9.94: Stopping taskmanager daemon (pid: 33786) on host ip-10-0-9-94.
+10.0.4.64: Stopping taskmanager daemon (pid: 9298) on host ip-10-0-4-64.
+10.0.13.204: Stopping taskmanager daemon (pid: 9283) on host ip-10-0-13-204.
+10.0.1.13: Stopping taskmanager daemon (pid: 9304) on host ip-10-0-1-13.
+10.0.10.119: Stopping taskmanager daemon (pid: 9313) on host ip-10-0-10-119.
+10.0.5.56: Stopping taskmanager daemon (pid: 9318) on host ip-10-0-5-56.
+10.0.15.51: Stopping taskmanager daemon (pid: 8761) on host ip-10-0-15-51.
+10.0.15.145: Stopping taskmanager daemon (pid: 8787) on host ip-10-0-15-145.
+10.0.0.90: Stopping taskmanager daemon (pid: 8779) on host ip-10-0-0-90.
+10.0.7.172: Stopping taskmanager daemon (pid: 8762) on host ip-10-0-7-172.
+10.0.1.55: Stopping taskmanager daemon (pid: 33246) on host ip-10-0-1-55.
+10.0.8.191: Stopping taskmanager daemon (pid: 8776) on host ip-10-0-8-191.
+10.0.11.203: Stopping taskmanager daemon (pid: 8782) on host ip-10-0-11-203.
+10.0.0.232: Stopping taskmanager daemon (pid: 8814) on host ip-10-0-0-232.
+10.0.7.222: Stopping taskmanager daemon (pid: 8778) on host ip-10-0-7-222.
+10.0.2.204: Stopping taskmanager daemon (pid: 33237) on host ip-10-0-2-204.
+10.0.1.40: Stopping taskmanager daemon (pid: 8774) on host ip-10-0-1-40.
+10.0.15.232: Stopping taskmanager daemon (pid: 8780) on host ip-10-0-15-232.
+10.0.12.16: Stopping taskmanager daemon (pid: 33254) on host ip-10-0-12-16.
+10.0.10.14: Stopping taskmanager daemon (pid: 33218) on host ip-10-0-10-14.
+10.0.1.215: Stopping taskmanager daemon (pid: 8763) on host ip-10-0-1-215.
+10.0.0.114: Stopping taskmanager daemon (pid: 33251) on host ip-10-0-0-114.
+10.0.13.173: Stopping taskmanager daemon (pid: 8782) on host ip-10-0-13-173.
+10.0.1.212: Stopping taskmanager daemon (pid: 33255) on host ip-10-0-1-212.
+10.0.7.75: Stopping taskmanager daemon (pid: 8776) on host ip-10-0-7-75.
+10.0.1.235: Stopping taskmanager daemon (pid: 33239) on host ip-10-0-1-235.
+10.0.12.159: Stopping taskmanager daemon (pid: 8777) on host ip-10-0-12-159.
+10.0.0.68: Stopping taskmanager daemon (pid: 8776) on host ip-10-0-0-68.
+10.0.2.147: Stopping taskmanager daemon (pid: 8807) on host ip-10-0-2-147.
+10.0.4.67: Stopping taskmanager daemon (pid: 33225) on host ip-10-0-4-67.
+10.0.3.121: Stopping taskmanager daemon (pid: 8775) on host ip-10-0-3-121.
+10.0.1.210: Stopping taskmanager daemon (pid: 8770) on host ip-10-0-1-210.
+10.0.7.23: Stopping taskmanager daemon (pid: 33242) on host ip-10-0-7-23.
+10.0.2.32: Stopping taskmanager daemon (pid: 8762) on host ip-10-0-2-32.
+10.0.9.241: Stopping taskmanager daemon (pid: 8765) on host ip-10-0-9-241.
+10.0.9.215: Stopping taskmanager daemon (pid: 8779) on host ip-10-0-9-215.
+10.0.7.70: Stopping taskmanager daemon (pid: 8774) on host ip-10-0-7-70.
+10.0.4.247: Stopping taskmanager daemon (pid: 33252) on host ip-10-0-4-247.
+10.0.4.203: Stopping taskmanager daemon (pid: 8778) on host ip-10-0-4-203.
+10.0.5.200: Stopping taskmanager daemon (pid: 8786) on host ip-10-0-5-200.
+10.0.4.82: Stopping taskmanager daemon (pid: 8782) on host ip-10-0-4-82.
+10.0.11.18: Stopping taskmanager daemon (pid: 33248) on host ip-10-0-11-18.
+10.0.5.118: Stopping taskmanager daemon (pid: 8786) on host ip-10-0-5-118.
+10.0.7.203: Stopping taskmanager daemon (pid: 8786) on host ip-10-0-7-203.
+10.0.7.98: Stopping taskmanager daemon (pid: 8740) on host ip-10-0-7-98.
+10.0.10.136: Stopping taskmanager daemon (pid: 33249) on host ip-10-0-10-136.
+10.0.4.27: Stopping taskmanager daemon (pid: 8753) on host ip-10-0-4-27.
+10.0.15.67: Stopping taskmanager daemon (pid: 8782) on host ip-10-0-15-67.
+10.0.2.105: Stopping taskmanager daemon (pid: 8786) on host ip-10-0-2-105.
+10.0.1.200: Stopping taskmanager daemon (pid: 8756) on host ip-10-0-1-200.
+10.0.8.4: Stopping taskmanager daemon (pid: 8769) on host ip-10-0-8-4.
+10.0.0.134: Stopping taskmanager daemon (pid: 8771) on host ip-10-0-0-134.
+10.0.9.199: Stopping taskmanager daemon (pid: 8743) on host ip-10-0-9-199.
+10.0.3.45: Stopping taskmanager daemon (pid: 8786) on host ip-10-0-3-45.
+10.0.12.204: Stopping taskmanager daemon (pid: 8773) on host ip-10-0-12-204.
+10.0.15.214: Stopping taskmanager daemon (pid: 33249) on host ip-10-0-15-214.
+10.0.9.146: Stopping taskmanager daemon (pid: 8784) on host ip-10-0-9-146.
+10.0.9.182: Stopping taskmanager daemon (pid: 8763) on host ip-10-0-9-182.
+10.0.6.20: Stopping taskmanager daemon (pid: 8785) on host ip-10-0-6-20.
+10.0.3.183: Stopping taskmanager daemon (pid: 8819) on host ip-10-0-3-183.
+10.0.11.153: Stopping taskmanager daemon (pid: 8777) on host ip-10-0-11-153.
+10.0.10.192: Stopping taskmanager daemon (pid: 8774) on host ip-10-0-10-192.
+10.0.8.139: Stopping taskmanager daemon (pid: 8775) on host ip-10-0-8-139.
+10.0.10.191: Stopping taskmanager daemon (pid: 8768) on host ip-10-0-10-191.
+10.0.5.86: Stopping taskmanager daemon (pid: 8786) on host ip-10-0-5-86.
+10.0.15.18: Stopping taskmanager daemon (pid: 8773) on host ip-10-0-15-18.
+10.0.3.190: Stopping taskmanager daemon (pid: 8778) on host ip-10-0-3-190.
+10.0.12.112: Stopping taskmanager daemon (pid: 8764) on host ip-10-0-12-112.
+10.0.7.162: Stopping taskmanager daemon (pid: 8785) on host ip-10-0-7-162.
+10.0.10.50: Stopping taskmanager daemon (pid: 8777) on host ip-10-0-10-50.
+10.0.3.246: Stopping taskmanager daemon (pid: 8774) on host ip-10-0-3-246.
+10.0.5.125: Stopping taskmanager daemon (pid: 33248) on host ip-10-0-5-125.
+10.0.13.89: Stopping taskmanager daemon (pid: 8776) on host ip-10-0-13-89.
+10.0.9.152: Stopping taskmanager daemon (pid: 8775) on host ip-10-0-9-152.
+10.0.8.69: Stopping taskmanager daemon (pid: 33234) on host ip-10-0-8-69.
+10.0.0.213: Stopping taskmanager daemon (pid: 8780) on host ip-10-0-0-213.
+10.0.2.238: Stopping taskmanager daemon (pid: 33229) on host ip-10-0-2-238.
+10.0.10.165: Stopping taskmanager daemon (pid: 8756) on host ip-10-0-10-165.
+10.0.13.38: Stopping taskmanager daemon (pid: 8774) on host ip-10-0-13-38.
+10.0.10.171: Stopping taskmanager daemon (pid: 33246) on host ip-10-0-10-171.
+10.0.14.69: Stopping taskmanager daemon (pid: 8777) on host ip-10-0-14-69.
+10.0.7.57: Stopping taskmanager daemon (pid: 8752) on host ip-10-0-7-57.
+10.0.3.170: Stopping taskmanager daemon (pid: 8758) on host ip-10-0-3-170.
+10.0.11.106: Stopping taskmanager daemon (pid: 8768) on host ip-10-0-11-106.
+10.0.7.219: Stopping taskmanager daemon (pid: 33258) on host ip-10-0-7-219.
+10.0.4.55: Stopping taskmanager daemon (pid: 33243) on host ip-10-0-4-55.
+10.0.13.198: Stopping taskmanager daemon (pid: 8729) on host ip-10-0-13-198.
+10.0.14.94: Stopping taskmanager daemon (pid: 8779) on host ip-10-0-14-94.
+10.0.10.103: Stopping taskmanager daemon (pid: 8789) on host ip-10-0-10-103.
+10.0.6.15: Stopping taskmanager daemon (pid: 33214) on host ip-10-0-6-15.
+10.0.13.21: Stopping taskmanager daemon (pid: 8781) on host ip-10-0-13-21.
+10.0.9.38: Stopping taskmanager daemon (pid: 8767) on host ip-10-0-9-38.
+10.0.0.216: Stopping taskmanager daemon (pid: 8778) on host ip-10-0-0-216.
+10.0.1.203: Stopping taskmanager daemon (pid: 33224) on host ip-10-0-1-203.
+10.0.15.169: Stopping taskmanager daemon (pid: 33243) on host ip-10-0-15-169.
+10.0.9.16: Stopping taskmanager daemon (pid: 33241) on host ip-10-0-9-16.
+10.0.15.225: Stopping taskmanager daemon (pid: 8783) on host ip-10-0-15-225.
+10.0.1.74: Stopping taskmanager daemon (pid: 8788) on host ip-10-0-1-74.
+10.0.2.203: Stopping taskmanager daemon (pid: 8779) on host ip-10-0-2-203.
+10.0.7.82: Stopping taskmanager daemon (pid: 33209) on host ip-10-0-7-82.
+10.0.1.246: Stopping taskmanager daemon (pid: 33250) on host ip-10-0-1-246.
+10.0.13.86: Stopping taskmanager daemon (pid: 8823) on host ip-10-0-13-86.
+Stopping jobmanager daemon (pid: 17250) on host ip-10-0-8-193.
+../run.sh: line 48: 16912 Terminated              python -u ${CLOUDSORT_DIR}/statsd_server.py 9020 > statsd_server.log
