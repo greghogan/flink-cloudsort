@@ -75,7 +75,7 @@ public class IndyInputFormat extends FileInputFormat<Tuple1<IndyRecord>> {
 	}
 
 	@Override
-	public boolean reachedEnd() throws IOException {
+	public boolean reachedEnd() {
 		return end;
 	}
 }

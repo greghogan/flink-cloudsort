@@ -75,7 +75,7 @@ public class IndyInputFormat extends RichInputFormat<Tuple1<IndyRecord>, InputSp
 	public void configure(Configuration parameters) {}
 
 	@Override
-	public BaseStatistics getStatistics(BaseStatistics cachedStatistics) throws IOException {
+	public BaseStatistics getStatistics(BaseStatistics cachedStatistics) {
 		return null;
 	}
 
@@ -171,7 +171,7 @@ public class IndyInputFormat extends RichInputFormat<Tuple1<IndyRecord>, InputSp
 	}
 
 	@Override
-	public boolean reachedEnd() throws IOException {
+	public boolean reachedEnd() {
 		return end;
 	}
 }

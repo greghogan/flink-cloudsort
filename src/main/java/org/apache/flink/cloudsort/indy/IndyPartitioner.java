@@ -145,7 +145,7 @@ public class IndyPartitioner implements Partitioner<IndyRecord> {
 			}
 			return upper;
 		}
-		void print(PrintStream strm) throws IOException {
+		void print(PrintStream strm) {
 			for(int i = 0; i < 2*getLevel(); ++i) {
 				strm.print(' ');
 			}

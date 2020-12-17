@@ -18,8 +18,6 @@
 
 package org.apache.flink.cloudsort.util;
 
-import org.apache.hadoop.util.PureJavaCrc32;
-
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;

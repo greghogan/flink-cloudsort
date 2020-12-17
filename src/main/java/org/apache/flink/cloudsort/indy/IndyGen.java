@@ -47,8 +47,7 @@ public class IndyGen implements MapFunction<LongValue, Tuple1<IndyRecord>> {
 	private byte[] buffer = new byte[IndyRecord.LENGTH];
 
 	@Override
-	public Tuple1<IndyRecord> map(LongValue value)
-			throws Exception {
+	public Tuple1<IndyRecord> map(LongValue value) {
 		if (rand == null) {
 			rowId = new Unsigned16(value.getValue());
 			rand = Random16.skipAhead(rowId);

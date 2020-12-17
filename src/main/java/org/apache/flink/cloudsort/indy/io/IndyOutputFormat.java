@@ -76,7 +76,7 @@ public class IndyOutputFormat extends RichOutputFormat<Tuple1<IndyRecord>> {
 	public void configure(Configuration parameters) {}
 
 	@Override
-	public void open(int taskNumber, int numTasks) throws IOException {
+	public void open(int taskNumber, int numTasks) {
 		currentTaskNumber = taskNumber;
 		currentChunk = 0;
 
@@ -111,7 +111,7 @@ public class IndyOutputFormat extends RichOutputFormat<Tuple1<IndyRecord>> {
 	}
 
 	@Override
-	public void close() throws IOException {
+	public void close() {
 		if (stream != null) {
 			closeInternal();
 		}

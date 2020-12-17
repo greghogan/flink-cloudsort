@@ -62,7 +62,7 @@ public class IndyValidate extends RichMapFunction<Tuple1<IndyRecord>, Tuple1<Ind
 	}
 
 	@Override
-	public Tuple1<IndyRecord> map(Tuple1<IndyRecord> value) throws Exception {
+	public Tuple1<IndyRecord> map(Tuple1<IndyRecord> value) {
 		byte[] recordBytes = value.f0.getValue();
 
 		String misordered = null;
@@ -105,7 +105,7 @@ public class IndyValidate extends RichMapFunction<Tuple1<IndyRecord>, Tuple1<Ind
 	}
 
 	@Override
-	public void close() throws IOException {
+	public void close() {
 		ListAccumulator<Summary> accumulator = new ListAccumulator<>();
 		accumulator.add(summary);
 		getRuntimeContext().addAccumulator(id, accumulator);

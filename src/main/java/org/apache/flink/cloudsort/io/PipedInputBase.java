@@ -51,7 +51,7 @@ public abstract class PipedInputBase implements PipedInput, Serializable {
 	}
 
 	@Override
-	public void close() throws IOException {
+	public void close() {
 		Preconditions.checkNotNull(downloader);
 
 		try {
